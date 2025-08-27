@@ -102,12 +102,25 @@ h3 {
 }
 
 /* === ファーストビュー === */
-
 .video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9比率 */
+  height: 0;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* .video-wrapper {
   position: relative;
   padding-top: 56.25%;
   /* 16:9のアスペクト比 */
-  height: 0;
+/*   height: 0;
   overflow: hidden;
 }
 
@@ -117,7 +130,7 @@ h3 {
   left: 0;
   width: 100%;
   height: 100%;
-}
+} */
 
 #info {
   max-width: 968px;
