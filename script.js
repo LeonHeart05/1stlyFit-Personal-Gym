@@ -64,3 +64,27 @@ document.addEventListener('DOMContentLoaded', () => {
     applyReveal(config);
   });
 });
+
+
+let player;
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    videoId: 'CG_a1c6Je8c',  // YouTube動画ID
+    playerVars: {
+      autoplay: 1,           // 自動再生
+      controls: 0,           // コントロール非表示
+      modestbranding: 1,     // YouTubeロゴ控えめ
+      loop: 1,               // ループ再生
+      playlist: 'CG_a1c6Je8c', // ループ用に同じIDを指定
+      mute: 1,               // ミュート再生
+      rel: 0,                // 関連動画非表示
+      showinfo: 0            // タイトル非表示
+    },
+    events: {
+      onReady: (event) => {
+        event.target.playVideo();
+      }
+    }
+  });
+}
